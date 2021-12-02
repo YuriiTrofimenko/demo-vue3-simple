@@ -1,13 +1,23 @@
 <template lang='pug'>
-.counter Counter Component Stub
+.counter(@click="increase") {{state.count}}
 </template>
 
 <script>
+import { reactive } from 'vue'
 export default {
-  name: 'Counter'/* ,
+  name: 'Counter',
   props: {
-    msg: String
-  } */
+    initialCount: Number
+  },
+  setup (props) {
+    const state = reactive({
+      count: props.initialCount
+    })
+    function increase () {
+      state.count++
+    }
+    return {increase, state}
+  }
 }
 </script>
 

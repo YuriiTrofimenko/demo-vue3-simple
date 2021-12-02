@@ -1,6 +1,6 @@
 <template lang='pug'>
 h1 Hello Vue3!
-Counter
+Counter(:initialCount='10')
 </template>
 
 <script>
