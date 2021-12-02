@@ -1,22 +1,26 @@
 <template lang='pug'>
-.counter(@click="increase") {{state.count}}
+.counter(@click="increase" ref='counterRef') {{state.count}}
 </template>
 
 <script>
-import { reactive } from 'vue'
+import { reactive, ref, onMounted } from 'vue'
 export default {
   name: 'Counter',
   props: {
     initialCount: Number
   },
   setup (props) {
+    const counterRef = ref(null)
     const state = reactive({
       count: props.initialCount
     })
     function increase () {
       state.count++
     }
-    return {increase, state}
+    onMounted(() => {
+      setInterval(() => {console.log(counterRef.value.innerText)}, 4000)
+    })
+    return {increase, state, counterRef}
   }
 }
 </script>
