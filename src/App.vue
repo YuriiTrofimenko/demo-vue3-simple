@@ -1,6 +1,6 @@
-<template>
-<h1>Hello Vue3!</h1>
-<Counter/>
+<template lang='pug'>
+h1 Hello Vue3!
+Counter
 </template>
 
 <script>
@@ -14,13 +14,12 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang='stylus'>
+#app
+  font-family Avenir, Helvetica, Arial, sans-serif
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  text-align center
+  color #2c3e50
+  margin-top 60px
 </style>
